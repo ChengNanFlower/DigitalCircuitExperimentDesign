@@ -1,8 +1,38 @@
-*/*.cache/
-*/*.hw/
-*/*.ip_user_files/
-*/*.sim/
-*/*.xpr
+
+### XilinxVivado ###
+#########################################################################################################
+##	This is an example .gitignore file for Vivado, please treat it as an example as
+##	it might not be complete. In addition, XAPP 1165 should be followed.
+#########
+#Exclude all
+*
+!*/
+!.gitignore
+###########################################################################
+##	VIVADO
+#Source files:
+#Do NOT ignore VHDL, Verilog, block diagrams or EDIF files.
+!*.vhd
+!*.v
+!*.bd
+!*.edif
+#Project files
+#XPR  +  *.XML ? XPR (Files are merged into a single XPR file for 2014.1 version)
+#Do NOT ignore *.xpr files
+!*.xpr
+#Constraint files
+#Do NOT ignore *.xdc files
+!*.xdc
+#TCL - files
+!*.tcl
+#C-files
+!*.c
+!*.h
+!*.elf
+!*.bmm
+!*.xmp
+!*.md
+
 .history/
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,vivado
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,vivado
@@ -25,3 +55,5 @@
 # Ignore all local history of files
 .history
 .ionide
+# Created by https://www.toptal.com/developers/gitignore/api/xilinxvivado
+# Edit at https://www.toptal.com/developers/gitignore?templates=xilinxvivado
