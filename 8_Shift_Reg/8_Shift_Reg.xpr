@@ -4,7 +4,7 @@
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="71" Path="E:/codes/DigitalCircuitExperimentDesign/8_Shift_Reg/8_Shift_Reg.xpr">
+<Project Product="Vivado" Version="7" Minor="71" Path="e:/codes/DigitalCircuitExperimentDesign/8_Shift_Reg/8_Shift_Reg.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="029db813c0e64966962982cc3a5ac915"/>

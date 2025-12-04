@@ -12,6 +12,11 @@ module Shift_Reg_8bit(
     );
     
     // 异步清零和时钟控制的移位寄存器
+    // 控制逻辑：
+    // 1. CR=0: 异步清零（优先级最高）
+    // 2. SI=0: 保持当前值
+    // 3. SI=1且DI!=0: 左移（加载并行数据）
+    // 4. SI=1且DI=0: 右移1位
     always @(posedge CP or negedge CR) begin
         if (!CR) begin
             Q <= 8'b00000000;  // 异步清零
@@ -20,11 +25,14 @@ module Shift_Reg_8bit(
             // SI=0: 保持当前值
             Q <= Q;
         end
-        else begin
-            // SI=1: 移位操作
-            // 根据实验要求，当SI=1时应该加载并行数据（左移功能）
-            // 不管DI的值是什么，都应该加载到Q中
+        else if (DI != 8'b00000000) begin
+            // SI=1且DI非全0: 左移（加载并行数据）
             Q <= DI;
+        end
+        else begin
+            // SI=1且DI全0: 右移1位
+            // 右移操作：高位补0，低位移出到SQ
+            Q <= {1'b0, Q[7:1]};
         end
     end
     
