@@ -32,6 +32,7 @@
 !*.bmm
 !*.xmp
 !*.md
+!*.bit
 
 .history/
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,vivado
@@ -55,5 +56,6 @@
 # Ignore all local history of files
 .history
 .ionide
+*/*.runs/
 # Created by https://www.toptal.com/developers/gitignore/api/xilinxvivado
 # Edit at https://www.toptal.com/developers/gitignore?templates=xilinxvivado
