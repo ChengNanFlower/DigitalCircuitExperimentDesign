@@ -18,8 +18,9 @@ module Tube(
         else
             count <= count + 1'b1;
     end
-    // 100MHz / 2^18 ≈ 381Hz (约2.6ms周期)，符合人眼视觉暂留
-    assign clk_fresh = count[17]; 
+    // 原：100MHz / 2^18 ≈ 381Hz (约2.6ms周期)，符合人眼视觉暂留
+    // 降低频闪
+    assign clk_fresh = count[16]; 
 
     // --- 2. 位选控制 (轮流点亮) ---
     reg [2:0] bit_select;
